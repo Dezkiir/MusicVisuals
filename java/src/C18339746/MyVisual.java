@@ -8,14 +8,12 @@ public class MyVisual extends Visual
     AudioBandsVisual abv;
 
     public void settings()
-    {
-        size(1024, 500);
-        
+    {    
         // Use this to make fullscreen
         //fullScreen();
 
         // Use this to make fullscreen and use P3D for 3D graphics
-        //fullScreen(P3D, SPAN); 
+        fullScreen(P3D, SPAN); 
     }
 
     public void setup()
@@ -36,8 +34,8 @@ public class MyVisual extends Visual
     {
         if (key == ' ')
         {
-            as.stop();
-            as.trigger();
+            // as.stop();
+            // as.trigger();
         }
     }
 

@@ -13,27 +13,29 @@ public class MyVisualTest extends PApplet
 	BeatDetect beat;
 	int r = 200;
 	float rad = 70;
-	PImage DB;
+	PImage IMG;
 
 	public void settings()
 	{
-		size(1280, 960);
-		DB = loadImage("DragonBall.png");
+		size(1200, 630);
+		IMG = loadImage("Pintman.jpg");
 	}
 
 	public void setup() {
 		minim = new Minim(this);
-		Music = minim.loadFile("Maka.mp3");
+		Music = minim.loadFile("Pintman.wav");
 		meta = Music.getMetaData();
 		beat = new BeatDetect();
         Music.loop();
-        background(DB);
+        background(IMG);
 	}
 
 	
 	public void draw() {
+		// Centre Visual
+		float t = map(mouseX, 0, width, 0, 1);
 		beat.detect(Music.mix);
-		image(DB,0,0);
+		image(IMG,0,0);
 		noStroke();
 		rect(0, 0, width, height);
 		translate(width/2, height/2);
@@ -59,7 +61,7 @@ public class MyVisualTest extends PApplet
 			stroke(random(0,255),random(0,255),random(0,255));
 			line(x, y, x2, y2);
 		}
-	
+
 		beginShape();
 		noFill();
 		stroke(-1, 50);
@@ -76,12 +78,12 @@ public class MyVisualTest extends PApplet
 			point(x2, y2);
 			popStyle();
 		}
-    	endShape();
-    	if (flag){
+		endShape();
+		if (flag){
 			showMeta();
 		}
 	}
-		
+			
 	void showMeta() 
 	{
 		int time =  meta.length();
@@ -91,19 +93,19 @@ public class MyVisualTest extends PApplet
 		fill(0);
 		text( (int)(time/1000-millis()/1000)/60 + ":"+ (time/1000-millis()/1000)%60, -7, 21);	
 	}
-	
-boolean flag =false;
 
-public void mousePressed()
-{
-	if (dist(mouseX, mouseY, width/2, height/2)<150) flag =!flag;
-}
+	boolean flag =false;
 
-public void keyPressed() 
+	public void mousePressed()
 	{
-		if (key == 'e')
+		if (dist(mouseX, mouseY, width/2, height/2)<150) flag =!flag;
+	}
+
+	public void keyPressed() 
 		{
-			exit();
+			if (key == 'e')
+			{
+				exit();
+			}
 		}
 	}
-}

@@ -17,13 +17,13 @@ public class MyVisualTest extends PApplet
 
 	public void settings()
 	{
-		size(1200, 630);
-		IMG = loadImage("Pintman.jpg");
+		size(1920, 966);
+		IMG = loadImage("Gohan.png");
 	}
 
 	public void setup() {
 		minim = new Minim(this);
-		Music = minim.loadFile("Pintman.wav");
+		Music = minim.loadFile("Day of Fate.wav");
 		meta = Music.getMetaData();
 		beat = new BeatDetect();
         Music.loop();
@@ -33,7 +33,6 @@ public class MyVisualTest extends PApplet
 	
 	public void draw() {
 		// Centre Visual
-		float t = map(mouseX, 0, width, 0, 1);
 		beat.detect(Music.mix);
 		image(IMG,0,0);
 		noStroke();

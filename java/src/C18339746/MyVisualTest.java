@@ -13,12 +13,12 @@ public class MyVisualTest extends PApplet
 	BeatDetect beat;
 	int r = 200;
 	float rad = 70;
-	PImage IMG;
+	PImage DB;
 
 	public void settings()
 	{
-		size(1920, 966);
-		IMG = loadImage("Gohan.png");
+		size(1559, 700);
+		DB = loadImage("Silhouette.png");
 	}
 
 	public void setup() {
@@ -27,14 +27,14 @@ public class MyVisualTest extends PApplet
 		meta = Music.getMetaData();
 		beat = new BeatDetect();
         Music.loop();
-        background(IMG);
+        background(DB);
 	}
 
 	
 	public void draw() {
-		// Centre Visual
+        	
 		beat.detect(Music.mix);
-		image(IMG,0,0);
+		image(DB,0,0);
 		noStroke();
 		rect(0, 0, width, height);
 		translate(width/2, height/2);
@@ -60,7 +60,7 @@ public class MyVisualTest extends PApplet
 			stroke(random(0,255),random(0,255),random(0,255));
 			line(x, y, x2, y2);
 		}
-
+	
 		beginShape();
 		noFill();
 		stroke(-1, 50);
@@ -77,12 +77,12 @@ public class MyVisualTest extends PApplet
 			point(x2, y2);
 			popStyle();
 		}
-		endShape();
-		if (flag){
+    	endShape();
+    	if (flag){
 			showMeta();
 		}
 	}
-			
+		
 	void showMeta() 
 	{
 		int time =  meta.length();
@@ -92,7 +92,7 @@ public class MyVisualTest extends PApplet
 		fill(0);
 		text( (int)(time/1000-millis()/1000)/60 + ":"+ (time/1000-millis()/1000)%60, -7, 21);	
 	}
-
+	
 	boolean flag =false;
 
 	public void mousePressed()
@@ -101,10 +101,10 @@ public class MyVisualTest extends PApplet
 	}
 
 	public void keyPressed() 
+	{
+		if (key == 'e')
 		{
-			if (key == 'e')
-			{
-				exit();
-			}
+			exit();
 		}
 	}
+}

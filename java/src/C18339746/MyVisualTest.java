@@ -1,6 +1,5 @@
 package C18339746;
 
-import processing.core.PApplet;
 import processing.core.PImage;
 import ddf.minim.analysis.*;
 import ie.tudublin.Visual;

@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import C18339746.MyVisualTest;
+import C18339746.MyVisual;
 
 public class Main
 {	
@@ -8,7 +8,7 @@ public class Main
 	public void startUI()
 	{
 		String[] a = {"MAIN"};
-		processing.core.PApplet.runSketch( a, new MyVisualTest());
+		processing.core.PApplet.runSketch( a, new MyVisual());
 		
 	}
 

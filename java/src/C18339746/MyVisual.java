@@ -17,6 +17,7 @@ public class MyVisual extends Visual {
 	float rad = 70;
 	PImage DB;
 
+	// Configuring Screen Size and Background
 	public void settings() {
 		size(1350, 679);
 		DB = loadImage("Pintmen.png");
@@ -58,6 +59,7 @@ public class MyVisual extends Visual {
 
 
 		int bsize = Music.bufferSize();
+		// Loop to change the heights of the lines based on the amplitude
 		for (int i = 0; i < bsize - 1; i+=5)
 		{
 			float x = (r)*cos(i*2*PI/bsize);

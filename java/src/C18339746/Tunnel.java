@@ -5,20 +5,25 @@ import processing.core.PVector;
 
 public class Tunnel extends PApplet {
     
-    float zDist = 11;
+    // Variable for Dist between circle
+    float zDist = 10;
+    // Minimum Value Circles can spawn
     float zMin = -150;
+    // Maximum Value Circles can spawn
     float zMax = 250;
     float zStep = 2.8f;
-    float rad = 200;
+    // Radius of Circles
+    float rad = 300;
+    // Variable for Colour Calculation
     int nb = (int) ((zMax - zMin) / zDist);
     PVector[] circles = new PVector[nb];
     int[] colors = new int[nb];
     Boolean bnw = true, dots = false;
 
     public void settings() {
-        size(600, 400, P3D);
+        size(1350, 679, P3D);
     }
-    
+
     public void setup() {
         noFill();
         strokeWeight(2);
@@ -37,6 +42,7 @@ public class Tunnel extends PApplet {
     float fc = (float)frameCount, a;
     if (dots) beginShape(POINTS); 
 
+
     for (int i = 0; i < nb; i++) {
         pv = circles[i];
         pv.z += zStep;
@@ -44,12 +50,15 @@ public class Tunnel extends PApplet {
         pv.y = (float) ((noise((fc * 2 - 3000 - pv.z) / 550) - .5) * height * map(pv.z, zMin, zMax, 6, 0));
 
         a = map(pv.z, zMin, zMax, 0, 255);
+        // If not in Black and White mode draw the colours
         if (!bnw)stroke(colors[i], a);
         else stroke(map(pv.z, zMin, zMax, 0, 255), a);
         float r = map(pv.z, zMin, zMax, (float) (rad * .1), rad);
 
+        // If in Dot Mode
         if (dots) {
         float jmax = r;
+        
         for (int j  = 0; j < jmax; j++)
         {
             vertex(pv.x + r*cos(j*TWO_PI/jmax + fc/40)/2, pv.y + r*sin(j*TWO_PI/jmax + fc/40)/2, pv.z);

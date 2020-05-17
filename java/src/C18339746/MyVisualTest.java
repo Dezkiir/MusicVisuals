@@ -4,7 +4,6 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import ddf.minim.analysis.*;
 import ie.tudublin.Visual;
-import ie.tudublin.VisualException;
 import ddf.minim.*;
 
 public class MyVisualTest extends Visual {

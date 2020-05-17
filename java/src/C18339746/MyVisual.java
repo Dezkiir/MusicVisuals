@@ -97,7 +97,6 @@ public class MyVisual extends Visual {
 
 	public void mousePressed()
 	{
-		
 	}
 
 	public void keyPressed() 

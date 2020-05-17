@@ -13,7 +13,7 @@ public class Tunnel extends PApplet {
     float zMax = 250;
     float zStep = 2.8f;
     // Radius of Circles
-    float rad = 300;
+    float Radius = 300;
     // Variable for Colour Calculation
     int nb = (int) ((zMax - zMin) / zDist);
     PVector[] circles = new PVector[nb];
@@ -53,7 +53,7 @@ public class Tunnel extends PApplet {
             // If not in Black and White mode draw the colours
             if (!bnw)stroke(colors[i], a);
             else stroke(map(pv.z, zMin, zMax, 0, 255), a);
-            float r = map(pv.z, zMin, zMax, (float) (rad * .1), rad);
+            float r = map(pv.z, zMin, zMax, (float) (Radius * .1), Radius);
 
             // If in Dot Mode
             if (dots) {

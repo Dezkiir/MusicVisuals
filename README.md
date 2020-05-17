@@ -1,8 +1,8 @@
 # Music Visualiser Project
 
-Name:
+Name: Dylan Deakin
 
-Student Number: 
+Student Number: C18339746
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
@@ -12,78 +12,29 @@ Student Number:
 - Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
 
 # Description of the assignment
+- Music Visual with reactive circle depending on audio. 
+- Uses Beat Detect and Minim libraries. 
+- File takes in audio and analyses the Meta Data of the wav file.
+- Using this data it reacts to both the breat and the amp of the sound. 
+- The project also has the time remaining of the song visible in the file.
+- Backgrounds have been loaded into the program to help *liven* up the image.
 
 # Instructions
+- Click once if you wish to remove background and visual, then see remaining song time.
 
 # How it works
+- Takes in Audio FIle (Using the Minim Library)
+- Between the Beat Detect and Minim it loads the file.
+- Beat Detect *detects the beat* as the name states
+- Using minim I was able to get the meta data of the file to help create the audio buffer needed to play the file.
 
 # What I am most proud of in the assignment
+I am most proud of the centre visual. I am not the best when it comes to mapping audio signals to change the X and Y values of lines. I further added onto this by adding connecting lines and the centre circle which helps visualise the centrepoint of the circle. It's a pretty basic file but I was really satisfied with the outcome, however I do wish I could've implemented my Tunnel.java program.
 
-# Markdown Tutorial
-
-This is *emphasis*
-
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-
+# YouTube Links
+Pintman - https://youtu.be/9z6YUEfifyw
+[![YouTube](https://youtu.be/9z6YUEfifyw)](https://youtu.be/9z6YUEfifyw)
+Overtaken - https://youtu.be/7Q0pmd0UwwY
+[![YouTube](https://youtu.be/7Q0pmd0UwwY)](https://youtu.be/7Q0pmd0UwwY)
+Blue - https://youtu.be/tR7BfEGfd5Q
+[![YouTube](https://youtu.be/tR7BfEGfd5Q)](https://youtu.be/tR7BfEGfd5Q)

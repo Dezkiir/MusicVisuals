@@ -59,7 +59,7 @@ public class MyVisual extends Visual {
 
 
 		int bsize = Music.bufferSize();
-		// Loop to change the heights of the lines based on the amplitude
+		// Loop to draw lines based on amp and beat
 		for (int i = 0; i < bsize - 1; i+=5)
 		{
 			float x = (r)*cos(i*2*PI/bsize);
@@ -74,7 +74,7 @@ public class MyVisual extends Visual {
 		noFill();
 		stroke(-1, 50);
 
-		// For loop to draw lines depending on beat and amp
+		// Loop to draw dots and lines connecting the individual floating points
 		for (int i = 0; i < bsize; i+=30)
 		{
 			float x2 = (r + Music.left.get(i)*100)*cos(i*2*PI/bsize);

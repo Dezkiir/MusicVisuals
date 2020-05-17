@@ -19,7 +19,7 @@ public class MyVisual extends Visual {
 
 	public void settings() {
 		size(1350, 679);
-		DB = loadImage("Pintman.png");
+		DB = loadImage("Pintmen.png");
 	}
 
 
@@ -38,7 +38,6 @@ public class MyVisual extends Visual {
 	
 	public void draw() {
 		
-		
 		beat.detect(Music.mix);
 		image(DB,0,0);
 		noStroke();
@@ -56,6 +55,8 @@ public class MyVisual extends Visual {
 		}
 		ellipse(0, 0, 2*rad, 2*rad);
 		stroke(-1, 50);
+
+
 		int bsize = Music.bufferSize();
 		for (int i = 0; i < bsize - 1; i+=5)
 		{
@@ -71,6 +72,7 @@ public class MyVisual extends Visual {
 		noFill();
 		stroke(-1, 50);
 
+		// For loop to draw lines depending on beat and amp
 		for (int i = 0; i < bsize; i+=30)
 		{
 			float x2 = (r + Music.left.get(i)*100)*cos(i*2*PI/bsize);
@@ -83,7 +85,9 @@ public class MyVisual extends Visual {
 			point(x2, y2);
 			popStyle();
 		}
-    	endShape();
+		endShape();
+		
+		//If moused pressed so time remaining
     	if (flag){
 			showMeta();
 		}
@@ -93,7 +97,7 @@ public class MyVisual extends Visual {
 	void showMeta() 
 	{
 		int time =  meta.length();
-
+		// Meta Data of Remaining Time is within Circle
 		textSize(50);
 		textAlign(CENTER);
 		fill(0);
@@ -104,6 +108,8 @@ public class MyVisual extends Visual {
 
 	public void mousePressed()
 	{
+		// If mouse is pressed, background disappears and you can see the meta data of remaining time
+		if (dist(mouseX, mouseY, width/2, height/2)<150) flag =!flag;
 	}
 
 	public void keyPressed() 

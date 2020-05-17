@@ -3,10 +3,11 @@ package C18339746;
 import processing.core.PApplet;
 import processing.core.PImage;
 import ddf.minim.analysis.*;
+import ie.tudublin.Visual;
+import ie.tudublin.VisualException;
 import ddf.minim.*;
 
-public class MyVisualTest extends PApplet
-{	
+public class MyVisualTest extends Visual {
 	Minim minim;
 	AudioPlayer Music;
 	AudioMetaData meta;
@@ -15,20 +16,20 @@ public class MyVisualTest extends PApplet
 	float rad = 70;
 	PImage DB;
 
-	public void settings()
-	{
-		size(1559, 700);
-		DB = loadImage("Silhouette.png");
+	public void settings() {
+		size(1350, 679);
+		DB = loadImage("Pintman.png");
 	}
 
 	public void setup() {
 		minim = new Minim(this);
-		Music = minim.loadFile("Day of Fate.wav");
+		Music = minim.loadFile("Pintman.wav");
 		meta = Music.getMetaData();
 		beat = new BeatDetect();
-        Music.loop();
-        background(DB);
+		Music.loop();
+		background(DB);
 	}
+
 
 	
 	public void draw() {

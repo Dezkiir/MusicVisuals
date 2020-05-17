@@ -35,7 +35,7 @@ public class CubeVisual extends Visual
         setFrameSize(256);
 
         startMinim();
-        loadAudio("heroplanet.mp3");
+        loadAudio("Pintman.wav");
         //getAp().play();
         //startListening(); 
         

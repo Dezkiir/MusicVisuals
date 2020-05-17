@@ -58,7 +58,8 @@ public class Tunnel extends PApplet {
         // If in Dot Mode
         if (dots) {
         float jmax = r;
-        
+
+        // Loop to draw dots at fixed intervals around the circle
         for (int j  = 0; j < jmax; j++)
         {
             vertex(pv.x + r*cos(j*TWO_PI/jmax + fc/40)/2, pv.y + r*sin(j*TWO_PI/jmax + fc/40)/2, pv.z);

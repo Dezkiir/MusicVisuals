@@ -6,6 +6,7 @@ import ie.tudublin.Visual;
 import ddf.minim.*;
 
 public class MyVisual extends Visual {
+	
 	Minim minim;
 	AudioPlayer Music;
 	AudioMetaData meta;
@@ -31,7 +32,7 @@ public class MyVisual extends Visual {
 
 	
 	public void draw() {
-        	
+        
 		beat.detect(Music.mix);
 		image(DB,0,0);
 		noStroke();
@@ -96,7 +97,7 @@ public class MyVisual extends Visual {
 
 	public void mousePressed()
 	{
-		if (dist(mouseX, mouseY, width/2, height/2)<150) flag =!flag;
+		
 	}
 
 	public void keyPressed() 

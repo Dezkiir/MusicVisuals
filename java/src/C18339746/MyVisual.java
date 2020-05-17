@@ -7,10 +7,12 @@ import ddf.minim.*;
 
 public class MyVisual extends Visual {
 	
+	// Objects for Sound Visual
 	Minim minim;
 	AudioPlayer Music;
 	AudioMetaData meta;
 	BeatDetect beat;
+
 	int r = 200;
 	float rad = 70;
 	PImage DB;
@@ -20,9 +22,12 @@ public class MyVisual extends Visual {
 		DB = loadImage("Pintman.png");
 	}
 
+
 	public void setup() {
+		// Creating Minin (An Audio Library) Object
 		minim = new Minim(this);
 		Music = minim.loadFile("Pintman.wav");
+		// Getting the details of wav file
 		meta = Music.getMetaData();
 		beat = new BeatDetect();
 		Music.loop();
@@ -32,7 +37,8 @@ public class MyVisual extends Visual {
 
 	
 	public void draw() {
-        
+		
+		
 		beat.detect(Music.mix);
 		image(DB,0,0);
 		noStroke();
@@ -83,6 +89,7 @@ public class MyVisual extends Visual {
 		}
 	}
 		
+	// Function to show details of the song (Remaining time)
 	void showMeta() 
 	{
 		int time =  meta.length();
